@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+          integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
     <div class="container">
@@ -15,49 +18,118 @@
         <form action="login.html" class="form" id="form">
             <div class="form-control">
                 <label>First Name</label>
-                <input type="text" id="fname" placeholder="First Name">
-                <i class="fa-solid fa-circle-check"></i>
-                <i class="fa-solid fa-circle-exclamation"></i>
+                <input type="text" name="" id="fname" placeholder="First Name" autocomplete="off">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
                 <small>Error msg</small>
             </div>
             <div class="form-control">
                 <label>Last Name</label>
-                <input type="text" id="lname" placeholder="Last Name">
-                <i class="fa-solid fa-circle-check"></i>
-                <i class="fa-solid fa-circle-exclamation"></i>
+                <input type="text" id="lname" placeholder="Last Name" autocomplete="off">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
                 <small>Error msg</small>
             </div>
             <div class="form-control">
                 <label>Email</label>
-                <input type="text" id="email" placeholder="Email">
-                <i class="fa-solid fa-circle-check"></i>
-                <i class="fa-solid fa-circle-exclamation"></i>
+                <input type="email" id="email" placeholder="Email" autocomplete="off">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
                 <small>Error msg</small>
             </div>
             <div class="form-control">
                 <label>Mobile No.</label>
-                <input type="number" id="mobile_no" placeholder="Mobile No.">
-                <i class="fa-solid fa-circle-check"></i>
-                <i class="fa-solid fa-circle-exclamation"></i>
+                <input type="number" id="mobile_no" placeholder="Mobile No." autocomplete="off">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
                 <small>Error msg</small>
             </div>
             <div class="form-control">
                 <label>Password</label>
-                <input type="text" id="password" placeholder="Password">
-                <i class="fa-solid fa-circle-check"></i>
-                <i class="fa-solid fa-circle-exclamation"></i>
+                <input type="password" id="password" placeholder="Password" autocomplete="off">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
                 <small>Error msg</small>
             </div>
             <div class="form-control">
                 <label>Conform Password</label>
-                <input type="text" id="cpassword" placeholder="Conform Password">
-                <i class="fa-solid fa-circle-check"></i>
-                <i class="fa-solid fa-circle-exclamation"></i>
+                <input type="password" id="cpassword" placeholder="Conform Password" autocomplete="off">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
                 <small>Error msg</small>
             </div>
-            <button type="submit" id="signup">Sign Up</button>
+            <input type="submit" value="Sign Up" class="btn" name="">
         </form>
     </div>
+    <script>
+        const form = document.getElementById('form');
+        const fname = document.getElementById('fname');
+        const lname = document.getElementById('lname');
+        const email = document.getElementById('email');
+        const mobile_no = document.getElementById('mobile_no');
+        const password = document.getElementById('password');
+        const cpassword = document.getElementById('cpassword');
+
+        //add event
+
+        form.addEventListener('submit',(event)=>{
+            event.preventDefault();
+            validate();
+        })
+
+        const isEmail=(email)=>{
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))
+            {
+               return (true)
+            }
+            else
+               return (false)
+        }
+
+        //define the validate function
+
+        const validate=()=>{
+            const fname=fname.value.trim();
+            const lname=lname.value.trim();
+            const email=email.value.trim();
+            const mobile_no=mobile_no.value.trim();
+            const password=password.value.trim();
+            const cpassword=cpassword.value.trim();
+
+            //validate first name
+            if(fname==""){
+                setErrormsg(fname, 'first name cannot be blank');
+            }
+            else{
+                setSuccessMsg(fname);
+            }
+
+            //validate last name
+            if(lname==""){
+                setErrormsg(lname, 'last name cannot be blank');
+            }
+            else{
+                setSuccessMsg(lname);
+            }
+
+            //validate email
+            if(email==""){
+                setErrormsg(email, 'email cannot be blank');
+            }
+            else if(isEmail()){
+                setSuccessMsg(email, 'Not a valid email');
+            }
+            else{
+                setSuccessMsg(email);
+            }
+        }
+        function setErrorMsg(input, errormsgs){
+            const formControl=input.parentElement;
+            const small=formControl.querySelector('small');
+            formControl.className="form-control error";
+            small.innerText=errormsg;
+        }
+    </script>
 </body>
 </html>
 
