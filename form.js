@@ -1,34 +1,37 @@
-var email=document.getElementById('email').value;
-var pwd=document.getElementById('pwd1').value;
-var mno=document.getElementById('mno').value;
-function validation(){
+var email=document.getElementById('email');
+var pwd=document.getElementById('pwd1');
+var mno=document.getElementById('mno');
+email.addEventListener('input',()=>{
+    var emailBox=document.querySelector('.emailBox');
+    var emailText=document.querySelector('.emailText');
     let emailv=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    let mnov= /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+    if(email.value.match(emailv))
+    {
+        emailBox.classList.add('valid');
+        email.classList.remove('invalid');
+        emailText.innerHTML="Your Email Address is valid.";
+    }
+    else
+    {
+        emailBox.classList.add('invalid');
+        emailText.classList.remove('valid');
+        emailText.innerHTML="Must be a valid email address.";
+    }
+});
+password.addEventListener('input',()=>{
+    var passBox=document.querySelector('.passBox');
+    var passText=document.querySelector('.passText');
     var pwdv=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
-    if(email.match(emailv))
+    if(pwd.value.match(pwdv))
     {
-        return true;
+        passBox.classList.add('valid');
+        passText.classList.remove('invalid');
+        passText.innerHTML="Your Password is valid.";
     }
-    else if(!(email.match(emailv)))
+    else
     {
-        alert("You have entered an invalid email address!");
-        document.form1.tex1.focus();
-        return false;
+        passBox.classList.add('invalid');
+        passText.classList.remove('valid');
+        passText.innerHTML="Minimum 8 characters, at least one uppercase, and one lower case, must contain at least one number";
     }
-    else if(mno.match(mnov))
-    {
-        return true;
-    }
-    else if (!(mno.match(mnov))){
-        alert("You have entered an invalid mobile no.");
-    }
-    if(pwd.match(pwdv))
-    {
-        return true;
-    }
-    else if(!(pwd.match(pwdv)))
-    {
-        alert("You have entered an invalid password!");
-        return false;
-    }
-}
+})

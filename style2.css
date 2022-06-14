@@ -62,3 +62,33 @@ a{
 a:hover{
     color: darkturquoise;
 }
+.emailText,
+.passText{
+    font-weight: 300;
+    font-style: italic;
+    padding: 5px;
+}
+label.vaid .emailText,
+label.vaid .passText{
+    color: #00ff00;
+}
+label.invaid .emailText,
+label.invaid .passText{
+    color: #f00;
+}
+label.vaild::before,
+label.invalid::before{
+    content:"";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 18px;
+    right: 5px;
+    z-index: 100;
+}
+label.valid::before{
+    background: url(check.svg)no-repeat center /cover;
+}
+label.valid::before{
+    background: url(error.png)no-repeat center /cover;
+}

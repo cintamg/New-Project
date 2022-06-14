@@ -1,4 +1,69 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>SIGN UP</h2>
+        </div>
+        <form action="login.html" class="form" id="form">
+            <div class="form-control">
+                <label>First Name</label>
+                <input type="text" id="fname" placeholder="First Name">
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error msg</small>
+            </div>
+            <div class="form-control">
+                <label>Last Name</label>
+                <input type="text" id="lname" placeholder="Last Name">
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error msg</small>
+            </div>
+            <div class="form-control">
+                <label>Email</label>
+                <input type="text" id="email" placeholder="Email">
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error msg</small>
+            </div>
+            <div class="form-control">
+                <label>Mobile No.</label>
+                <input type="number" id="mobile_no" placeholder="Mobile No.">
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error msg</small>
+            </div>
+            <div class="form-control">
+                <label>Password</label>
+                <input type="text" id="password" placeholder="Password">
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error msg</small>
+            </div>
+            <div class="form-control">
+                <label>Conform Password</label>
+                <input type="text" id="cpassword" placeholder="Conform Password">
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error msg</small>
+            </div>
+            <button type="submit" id="signup">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en" and dir="ltr">
 <head>
     <meta charset="utf-8">
@@ -11,8 +76,14 @@
                     <input type="text" placeholder="First Name" id="fname" required>
                     <input type="text" placeholder="Last name" id="lname" required>
                     <input type="number" placeholder="Mobile no." id="mno"> 
-                    <input type="email" placeholder="Email" id="email">
-                    <input type="password" placeholder="Password" id="pwd1">
+                    <label class="emailBox valid">
+                        <input type="email" placeholder="Email" id="email">
+                        <span class="emailText">MMMMM</span>
+                    </label>
+                    <label class="passBox invalid">
+                        <input type="password" placeholder="Password" id="pwd1">
+                        <span class="passText">MMMMM</span>
+                    </label>
                     <input type="password" placeholder="Conform Password" id="pwd2" required>
                     <button type="submit" id="submit">Sign Up</button>
                     <br><a>Already a member?</a>
@@ -20,4 +91,4 @@
                 </form>
                 <script src="form.js"></script>
     </body>
-</html>
+</html> -->
