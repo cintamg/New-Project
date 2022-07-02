@@ -14,7 +14,7 @@
         <div class="header">
             <h2>SIGN UP</h2>
         </div>
-        <form action="login.html" class="form" id="form">
+        <form action="" class="form" id="form">
             <div class="form-control">
                 <label>First Name</label>
                 <input type="text" name="" id="fname" placeholder="First Name" autocomplete="off">
@@ -57,126 +57,9 @@
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error msg</small>
             </div>
-            <input type="submit" value="Sign Up" class="btn" name="">
+            <input type="submit" class="btn" value="Submit">
         </form>
     </div>
-    <script>
-        const form = document.getElementById('form');
-        const fname = document.getElementById('fname');
-        const lname = document.getElementById('lname');
-        const email = document.getElementById('email');
-        const mobile_no = document.getElementById('mobile_no');
-        const password = document.getElementById('password');
-        const cpassword = document.getElementById('cpassword');
-
-        //add event
-
-        form.addEventListener('submit',(event)=>{
-            event.preventDefault();
-            validate();
-        })
-
-        const isEmail=(email)=>{
-            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))
-            {
-               return (true)
-            }
-            else
-               return (false)
-        }
-
-        const isPassword=(password)=>{
-            var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
-            if(password.value.match(decimal)) 
-            { 
-               return true;
-            }
-            else
-            { 
-              return false;
-            }
-
-        //define the validate function
-
-        const validate=()=>{
-            const fname=fname.value.trim();
-            const lname=lname.value.trim();
-            const email=email.value.trim();
-            const mobile_no=mobile_no.value.trim();
-            const password=password.value.trim();
-            const cpassword=cpassword.value.trim();
-
-            //validate first name
-            if(fname==""){
-                setErrormsg(fname, 'first name cannot be blank');
-            }
-            else{
-                setSuccessMsg(fname);
-            }
-
-            //validate last name
-            if(lname==""){
-                setErrormsg(lname, 'last name cannot be blank');
-            }
-            else{
-                setSuccessMsg(lname);
-            }
-
-            //validate email
-            if(email==""){
-                setErrormsg(email, 'email cannot be blank');
-            }
-            else if(isEmail(email)){
-                setSuccessMsg(email, 'Not a valid email');
-            }
-            else{
-                setSuccessMsg(email);
-            }
-
-            //validate phone
-            if(mobile_no==""){
-                setErrormsg(mobile_no, 'Mobile no. cannot be blank');
-            }
-            else if(mobile_no.length!=10){
-                setSuccessMsg(mobile_no, 'Not a valid Mobile no.');
-            }
-            else{
-                setSuccessMsg(mobile_no);
-            }
-
-            //validate password
-            if(password==""){
-                setErrormsg(password, 'Password cannot be blank');
-            }
-            else if(isPassword(password)){
-                setSuccessMsg(password, 'Not a valid password');
-            }
-            else{
-                setSuccessMsg(password);
-            }
-
-            //validate confirm password
-            if(cpassword==""){
-                setErrormsg(cpassword, 'Confirm Password cannot be blank');
-            }
-            else if(password != cpassword){
-                setSuccessMsg(cpassword, 'Password not matching');
-            }
-            else{
-                setSuccessMsg(cpassword);
-            }
-        }
-        function setErrorMsg(input, errormsg){
-            const formControl=input.parentElement;
-            const small=formControl.querySelector('small');
-            formControl.className="form-control error";
-            small.innerText=errormsg;
-        }
-        function setErrorMsg(input){
-            const formControl=input.parentElement;
-            formControl.className="form-control success";
-            small.innerText=errormsg;
-        }
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
