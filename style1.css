@@ -43,7 +43,7 @@ h1{
     margin-bottom: 25px;
 }
 
-.loginbox input[type="text"],input[type="text"]
+.loginbox input[type="text"]
 {
     border: none;
     border-bottom: 1px solid #fff;
@@ -52,6 +52,26 @@ h1{
     height: 40px;
     color: #fff;
     font-size: 16px;
+}
+
+.loginbox input[type="password"]
+{
+    width: 250px;
+    height: 30px;
+    padding: 3 20px;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    color: #fff;
+    background: transparent;
+    font-size: 16px;
+}
+
+#message{
+    position: absolute;
+    bottom: 145px;
+    color: #fff;
+    font-size: 15px;
+    display: none;
 }
 
 .loginbox input[type="submit"]{

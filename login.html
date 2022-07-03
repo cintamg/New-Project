@@ -9,13 +9,15 @@
         <div class="loginbox">
             <img src="avatar.png" class="avatar">
                 <h1>Login Here</h1> 
-                <form class="box" action="homepg.html" method="post">
+                <form class="box">
                     <p>User Name</p>
-                    <input type="text" name="" placeholder="User Name" required="">
+                    <input type="text" name="" placeholder="User Name" required>
                     <p>Password</p>
-                    <input type="password" name="" placeholder="Password" required="">
+                    <input type="password" name="" placeholder="Password" required>
+                    <p id="message">Password is<span id="strength"></span></p>
                     <input type="submit" name="" value="LOGIN">
                 </form>
-            </div>
+        </div>
+        <script src="login.js"></script>
     </body>
 </html>
